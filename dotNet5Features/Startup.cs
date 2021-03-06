@@ -28,6 +28,10 @@ namespace dotNet5Features
         {
 
             services.AddControllers();
+
+            // ASP.NET 5 automatically added Swagger to your project!
+            // it's very usefull
+            // it's means 'Swagger' is support and develop from .NET Team
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotNet5Features", Version = "v1" });
@@ -48,6 +52,7 @@ namespace dotNet5Features
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
